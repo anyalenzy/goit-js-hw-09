@@ -4,6 +4,7 @@
   | default @import url()
   |============================
 */
+@import 'simplelightbox/dist/simple-lightbox.min.css';
 @import url('./reset.css');
 @import url('./01-gallery.css');
 @import url('./02-form.css');
@@ -22,4 +23,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+body {
+  width: 100%;
+  height: auto;
 }

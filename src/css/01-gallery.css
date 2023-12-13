@@ -1,0 +1,25 @@
+.gallery {
+  display: flex;
+  max-width: 1158px;
+  padding: 24px 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin: 0 auto;
+}
+.gallery-item {
+  width: calc((100% - 48px) / 3);
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.gallery-item:hover {
+  transform: scale(1.1);
+}
+.sl-overlay {
+  background: #2e2f42;
+}
+
+.sl-wrapper .sl-close,
+.sl-wrapper .sl-counter,
+.sl-wrapper .sl-navigation button {
+  color: #fff;
+}
