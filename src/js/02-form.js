@@ -3,10 +3,7 @@ const form = document.querySelector('.feedback-form'),
   textArea = form.elements.message,
   localStorageKey = 'feedback-form-state';
 
-const formDataObject = {
-  email: input.value,
-  message: textArea.value,
-};
+const formDataObject = {};
 
 const localFormData = JSON.parse(localStorage.getItem(localStorageKey));
 if (localFormData) {
@@ -15,11 +12,8 @@ if (localFormData) {
 }
 
 form.addEventListener('input', e => {
-  if (e.target === input) {
-    formDataObject.email = e.target.value;
-  } else if (e.target === textArea) {
-    formDataObject.message = e.target.value;
-  }
+  formDataObject.email = input.value.trim();
+  formDataObject.message = textArea.value.trim();
   localStorage.setItem(localStorageKey, JSON.stringify(formDataObject));
 });
 
