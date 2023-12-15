@@ -9,6 +9,8 @@ const localFormData = JSON.parse(localStorage.getItem(localStorageKey));
 if (localFormData) {
   input.value = localFormData.email;
   textArea.value = localFormData.message;
+  formDataObject.email = localFormData.email;
+  formDataObject.message = localFormData.message;
 }
 
 form.addEventListener('input', e => {
@@ -19,12 +21,10 @@ form.addEventListener('input', e => {
 
 form.addEventListener('submit', e => {
   e.preventDefault();
-  if (input.value !== '' || textArea.value !== '') {
+  if (input.value.trim() !== '' && textArea.value.trim() !== '') {
     console.log(formDataObject);
     localStorage.removeItem(localStorageKey);
     form.reset();
-    formDataObject.email = '';
-    formDataObject.message = '';
   } else {
     alert('Please fill out all fields!');
   }
